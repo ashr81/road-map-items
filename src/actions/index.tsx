@@ -1,0 +1,1 @@
+export { setBucketsData } from './buckets';

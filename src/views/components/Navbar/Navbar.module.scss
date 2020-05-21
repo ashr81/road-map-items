@@ -1,0 +1,18 @@
+.container {
+  color: var(--black-feather);
+  background-color: var(--lynx-white);
+  height: 60px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -2px -2px 5px 0px var(--black-feather);
+}
+
+.header {
+  color: var(--black-feather);
+  font-weight: var(--bold);
+}
