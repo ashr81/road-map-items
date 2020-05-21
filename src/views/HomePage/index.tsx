@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import homePage from './HomePage.module.scss';
-import { HomePageViewPropType } from '../../types';
+import { HomePageViewPropType, CardDataTypes } from '../../types';
 import CardsColumn from './CardsColumn';
 
 const HomePageView = ({
   data,
-  isLoading
+  isLoading,
+  loadData
 }: HomePageViewPropType) => {
+  useEffect(() => {
+    loadData()
+  }, [loadData])
+  console.log(data)
   return (
     <div className={homePage['home-page-container']}>
-      <CardsColumn data={data} isLoading={isLoading}/>
+      {data.map(({ data, title }: any) => <CardsColumn data={data} title={title} isLoading={isLoading}/>)}
     </div>
   )
 }

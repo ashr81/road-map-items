@@ -3,20 +3,48 @@
 
 
 .card-container {
-    padding: 8px;
-    > h3 {
-
-    }
-}
-
-.cards-column {
-
+  padding: 8px 16px;
+  margin: 16px;
+  background-color: var(--white);
+  color: var(--fog-of-war);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0px 2px 4px -4px var(--black-feather);
+  > * {
+    font-size: var(--font-size-md);
+    margin: 8px 0px;
+  }
+  > p {
+    font-size: var(--font-size-sm);
+    text-align: start;
+    font-weight: var(--regular);
+  }
 }
 
 .cards-column-container {
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  > * {
+    margin: 8px 16px;
+    font-weight: var(--bold);
+    display: inline-flex;
+  }
+  @media screen and (max-width: 600px){
+    width: 100%;
+  }
+  @media screen and (min-width: 600px) and (max-width: 1000px){
+    width: 50%;
+  }
+  @media screen and (min-width: 1000px){
+    width: 25%;
+  }
 }
 
 .home-page-container {
-    
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-wrap: wrap;
 }
