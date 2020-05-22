@@ -9,7 +9,10 @@
   color: var(--fog-of-war);
   display: flex;
   flex-direction: column;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
+  -webkit-box-shadow: 0px 2px 4px -4px var(--black-feather);
+  -moz-box-shadow: 0px 2px 4px -4px var(--black-feather);
   box-shadow: 0px 2px 4px -4px var(--black-feather);
   cursor: pointer;
   transition: transform 0.2s linear, box-shadow 0.2s linear;
@@ -23,7 +26,13 @@
     font-weight: var(--regular);
   }
   &:hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
     transform: scale(1.05);
+    -webkit-box-shadow: 2px 4px 8px -4px var(--black-feather);
+    -moz-box-shadow: 2px 4px 8px -4px var(--black-feather);
     box-shadow: 2px 4px 8px -4px var(--black-feather);
   }
 }
