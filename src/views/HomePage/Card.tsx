@@ -11,7 +11,7 @@ const Card = ({
   return (
     <article className={homePage['card-container']}>
       {isLoading ? <TextLoading /> : <h6>{title}</h6>}
-      {isLoading ? <TextLoading width='100%' style={{}}/> : <p>{subTitle}</p>}
+      {isLoading ? <TextLoading width={200} style={{}}/> : <p>{subTitle}</p>}
     </article>
   )
 }

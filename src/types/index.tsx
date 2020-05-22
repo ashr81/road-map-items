@@ -11,8 +11,7 @@ export type requestOptionsType = {
      * Set headers based on request/response.
      */
     headers: {
-        Accept?: string,
-        'Content-Type'?: string
+      Accept?: string
     },
     /**
      * API relative path to the original url given.
@@ -42,7 +41,7 @@ export type MainContainerPropTypes = {
 export type bucketReducerActionTypes = |
     {type: typeof ADD_BUCKETS_DATA, data: bucketsResponseType } |
     {type: typeof BUCKETS_FETCH_FAILED } |
-    {type: typeof BUCKETS_FETCH_SUCCEEDED }
+    {type: typeof BUCKETS_FETCH_SUCCEEDED, payload: bucketsResponseType }
 
 
 

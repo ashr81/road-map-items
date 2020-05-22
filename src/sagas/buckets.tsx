@@ -6,8 +6,8 @@ import { bucketsSagaActionType } from '../types';
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchUser(action: bucketsSagaActionType) {
    try {
-      const user = yield call(BucketsApi.fetch, action.payload.options);
-      yield put({type: BUCKETS_FETCH_SUCCEEDED, user: user});
+      const response = yield call(BucketsApi.fetch, action.payload.options);
+      yield put({type: BUCKETS_FETCH_SUCCEEDED, payload: response});
    } catch (e) {
       yield put({type: BUCKETS_FETCH_FAILED, message: e.message});
    }

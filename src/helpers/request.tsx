@@ -1,15 +1,14 @@
 import { requestOptionsType, bucketsResponseType } from "../types";
 
 const request = ({ path, ...options }: requestOptionsType):Promise<bucketsResponseType> => {
-    const URL = `http://roadmapservice.azurewebsites.net${path}`
+    // const URL = `http://roadmapservice.azurewebsites.net${path}`
+    const URL = `${process.env.REACT_APP_API_URL}${path}`
     const config = {
       method: 'GET',
       ...options,
     }; 
     const headers = {
       Accept: 'application/json',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
       ...config.headers,
     };
   
@@ -18,6 +17,7 @@ const request = ({ path, ...options }: requestOptionsType):Promise<bucketsRespon
       method: config.method
     };
     return fetch(URL, params)
+            .then(response => response.json())
   }
 
   export default request;

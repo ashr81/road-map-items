@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import homePage from './HomePage.module.scss';
-import { HomePageViewPropType, CardDataTypes } from '../../types';
+import { HomePageViewPropType } from '../../types';
 import CardsColumn from './CardsColumn';
 
 const HomePageView = ({
@@ -8,13 +8,15 @@ const HomePageView = ({
   isLoading,
   loadData
 }: HomePageViewPropType) => {
+
   useEffect(() => {
-    loadData()
+    // Data is loaded after 1000ms to mimik the loading state of the application.
+    window.setTimeout(loadData, 1000)
   }, [loadData])
-  console.log(data)
+
   return (
     <div className={homePage['home-page-container']}>
-      {data.map(({ data, title }: any) => <CardsColumn data={data} title={title} isLoading={isLoading}/>)}
+      {data.map(({ data, title, id }: any) => <CardsColumn key={id} data={data} title={title} isLoading={isLoading}/>)}
     </div>
   )
 }

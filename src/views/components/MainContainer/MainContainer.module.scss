@@ -2,5 +2,8 @@
   background-color: var(--garland-white);
   width: 100%;
   overflow-x: hidden;
-  min-height: 100vh;
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  left: 0px;
 }
