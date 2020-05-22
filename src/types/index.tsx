@@ -1,3 +1,6 @@
+/**
+ * types used across the application.
+ */
 import {
   BUCKETS_FETCH_FAILED,
   BUCKETS_FETCH_REQUESTED, BUCKETS_FETCH_SUCCEEDED

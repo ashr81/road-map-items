@@ -1,3 +1,6 @@
+/**
+ * Loading svg built using react-content-loader.
+ */
 import React from "react"
 import ContentLoader from "react-content-loader" 
 import { TextLoadingType } from "../types"

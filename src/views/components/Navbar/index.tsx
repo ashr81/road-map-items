@@ -1,3 +1,6 @@
+/**
+ * Shared component, which is used across multiple pages.
+ */
 import React from 'react';
 import navbar from './Navbar.module.scss';
 

@@ -1,3 +1,7 @@
+/**
+ * Maintains column layout for a group of Cards, move this to components
+ * if used in multiple pages.
+ */
 import React from 'react';
 import { CardsColumnPropType, CardPropTypes } from '../../types';
 import homePage from './HomePage.module.scss';

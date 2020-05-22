@@ -1,3 +1,7 @@
+/**
+ * Card component used for only the HomePage. move it to components
+ * folder if used elsewhere apart from HomePage.
+ */
 import React from 'react';
 import homePage from './HomePage.module.scss';
 import { CardPropTypes } from '../../types';

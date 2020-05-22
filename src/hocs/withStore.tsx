@@ -1,3 +1,6 @@
+/**
+ * Wraps App component inside react-redux Provider.
+ */
 import React from 'react';
 import { Provider } from 'react-redux';
 import store from '../store/configureStore'
