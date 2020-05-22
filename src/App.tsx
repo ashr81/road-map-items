@@ -3,6 +3,7 @@ import './App.scss';
 import Navbar from './views/components/Navbar';
 import MainContainer from './views/components/MainContainer';
 import HomePage from './pages/HomePage';
+import withStore from './hocs/withStore';
 
 function App() {
   return (
@@ -15,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default withStore(App);
