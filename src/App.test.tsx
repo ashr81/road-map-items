@@ -2,8 +2,14 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders innroad text element', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const textElement = getByText('InnRoad');
+  expect(textElement).toBeInTheDocument();
 });
+
+
+test('renders card elements when data is fetched' () => {
+  const { } = render(<App />)
+  
+})

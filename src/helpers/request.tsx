@@ -1,23 +1,23 @@
+import axios from 'axios';
 import { requestOptionsType, bucketsResponseType } from "../types";
 
 const request = ({ path, ...options }: requestOptionsType):Promise<bucketsResponseType> => {
     // const URL = `http://roadmapservice.azurewebsites.net${path}`
-    const URL = `${process.env.REACT_APP_API_URL}${path}`
-    const config = {
-      method: 'GET',
-      ...options,
-    }; 
+    const instance = axios.create({
+      baseURL: process.env.REACT_APP_API_URL || 'http://localhost:5000',
+      timeout: 1000,
+    });
     const headers = {
       Accept: 'application/json',
-      ...config.headers,
+      ...options.headers,
     };
   
     const params = {
+      url: path,
       headers,
-      method: config.method
+      ...options
     };
-    return fetch(URL, params)
-            .then(response => response.json())
+    return instance.request(params)
   }
 
   export default request;

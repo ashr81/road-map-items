@@ -7,7 +7,7 @@ import { bucketsSagaActionType } from '../types';
 function* fetchUser(action: bucketsSagaActionType) {
    try {
       const response = yield call(BucketsApi.fetch, action.payload.options);
-      yield put({type: BUCKETS_FETCH_SUCCEEDED, payload: response});
+      yield put({type: BUCKETS_FETCH_SUCCEEDED, payload: response.data});
    } catch (e) {
       yield put({type: BUCKETS_FETCH_FAILED, message: e.message});
    }
