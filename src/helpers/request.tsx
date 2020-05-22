@@ -14,8 +14,8 @@ const request = ({ path, ...options }: requestOptionsType):Promise<bucketsRespon
   
     const params = {
       url: path,
+      ...options,
       headers,
-      ...options
     };
     return instance.request(params)
   }
