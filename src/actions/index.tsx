@@ -1,1 +1,1 @@
-export { setBucketsData } from './buckets';
+export { loadBucketsData } from './buckets';

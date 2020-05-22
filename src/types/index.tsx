@@ -1,5 +1,5 @@
 import {
-  ADD_BUCKETS_DATA, BUCKETS_FETCH_FAILED,
+  BUCKETS_FETCH_FAILED,
   BUCKETS_FETCH_REQUESTED, BUCKETS_FETCH_SUCCEEDED
 } from '../constants/buckets';
 export type requestOptionsType = {
@@ -29,9 +29,18 @@ export type bucketsSagaActionType = {
 }
 
 export type bucketsStateType = {
-    data: bucketsResponseType;
-    isLoading: boolean;
-    isError: boolean;
+  /**
+   * data object on state passed to buckets page.
+   */
+  data: bucketsResponseType;
+  /**
+   * Flag to show data is loading.
+   */
+  isLoading: boolean;
+  /**
+   * Flag to show message to user on error.
+   */
+  isError: boolean;
 }
 
 export type MainContainerPropTypes = {
@@ -39,12 +48,13 @@ export type MainContainerPropTypes = {
 }
 
 export type bucketReducerActionTypes = |
-    {type: typeof ADD_BUCKETS_DATA, data: bucketsResponseType } |
     {type: typeof BUCKETS_FETCH_FAILED } |
     {type: typeof BUCKETS_FETCH_SUCCEEDED, payload: bucketsResponseType }
 
 
-
+/**
+ * Data structure of each card element on buckets page.
+ */
 export type CardDataTypes = {
   id: number;
   title: string;
@@ -61,13 +71,29 @@ export type CardsColumnPropType = {
 }
 
 export interface HomePageViewPropType {
+  /**
+   * loadData: dispatch function that helps load data.
+   * Call the function to update with new data.
+   */
   loadData: () => void;
+  /**
+   * Data obtained by API is updated here and passed to present views.
+   */
   data: CardPropTypes[];
+  /**
+   * State to show loading symbols in cards view.
+   */
   isLoading: boolean;
 }
 
 export type TextLoadingType = {
-  width?: number | string;
+  /**
+   * Text loading using react-content-loader which specifies widhth
+   */
+  width?: number;
+  /**
+   * Height of the loader.
+   */
   height?: number;
   style?: {[key: string]: string};
 }

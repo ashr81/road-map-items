@@ -1,4 +1,4 @@
-import { ADD_BUCKETS_DATA, BUCKETS_FETCH_FAILED, BUCKETS_FETCH_SUCCEEDED } from "../constants/buckets";
+import { BUCKETS_FETCH_FAILED, BUCKETS_FETCH_SUCCEEDED } from "../constants/buckets";
 import { bucketsResponseType, bucketReducerActionTypes } from "../types";
 import initalBucketsData from '../.data/initial-buckets.json';
 
@@ -9,13 +9,6 @@ const initialState = {
 }
 const buckets = (state: bucketsResponseType = initialState, action: bucketReducerActionTypes) => {
   switch(action.type) {
-    case ADD_BUCKETS_DATA: {
-      return {
-        ...state,
-        data: [...action.data],
-        isLoading: true
-      }
-    }
     case BUCKETS_FETCH_FAILED: {
       return {
         ...state,
